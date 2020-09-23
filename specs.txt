@@ -1,0 +1,24 @@
+# Combine.finance is a fork of sushiswap with some customizations
+
+https://github.com/sushiswap/sushiswap
+
+## Customizations Required:
+
+1. Remove devaddr comissions
+2. Remove x10 bonus logic
+2. Rename SUSHI token to COMB (combine.finance)
+3. Implement deflation logic, rewards start with ~0.007 COMB per-block (~40 COMB/day) and will go down 0.1% on every block
+4. Limit maximum supply of tokens to 10000 COMB
+
+## Launch plan
+
+Please make sure current contracts will work as expected during all these steps:
+
+1. Deploy CombToken contract
+2. Mint 2500 tokens for the owner
+3. Deploy MasterChef contract
+4. Transfer CombToken's ownership to MasterChef
+5. Add 5 LP tokens to the pools list:
+5.1 COMB-ETH with _allocPoint = 7000
+5.2 4 other pairs with _allocPoint = 750
+5.3 This will cause 70% of the reward pool to be allocated to COMB-ETH stakers and the rest will get 7.5

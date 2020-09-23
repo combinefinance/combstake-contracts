@@ -1,0 +1,25 @@
+{
+  "name": "combine-finance",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "@truffle/hdwallet-provider": "^1.0.38",
+    "dotenv": "^8.2.0",
+    "truffle": "^5.1.41",
+    "truffle-flattener": "^1.4.4",
+    "truffle-plugin-verify": "^0.3.11"
+  },
+  "scripts": {
+    "eth:complie": "truffle compile",
+    "eth:deploy": "truffle migrate --network development",
+    "eth:deploy:ropsten": "truffle migrate --network ropsten",
+    "eth:deploy:mainnet": "truffle migrate --network mainnet",
+    "eth:verify:ropsten": "truffle run verify CombToken --network ropsten",
+    "eth:verify:rinkeby": "truffle run verify CombToken --network rinkeby",
+    "eth:verify:mainnet": "truffle run verify CombToken --network mainnet",
+    "eth:cleanup": "rm -rf build/contracts/*"
+  }
+}
